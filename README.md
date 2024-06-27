@@ -22,3 +22,5 @@ cp model.d.ts carrot-demo/interface.d.ts
 ```
 
 I then generated a carrot patch from the model to be visualised in the web app.
+
+![Farm Life](farm_life.jpg)
