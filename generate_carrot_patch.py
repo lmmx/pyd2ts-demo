@@ -28,8 +28,9 @@ def generate_carrot_patch(rows: int, cols: int) -> list[Carrot]:
 
 
 if __name__ == "__main__":
-    patch_size = 10
-    carrot_patch = generate_carrot_patch(patch_size, patch_size)
+    patch_size = (5, 20)
+    h, w = patch_size
+    carrot_patch = generate_carrot_patch(*patch_size)
 
     output_path = Path("carrot-demo/src/data/carrot_patch.json")
     output_path.parent.mkdir(exist_ok=True)
@@ -37,6 +38,4 @@ if __name__ == "__main__":
     carrot_patch_json = ta.dump_json(carrot_patch, indent=2)
     output_path.write_bytes(carrot_patch_json)
 
-    print(
-        f"Generated {len(carrot_patch)} carrots in a {patch_size}x{patch_size} patch."
-    )
+    print(f"Generated {len(carrot_patch)} carrots in a {h}x{w} patch.")

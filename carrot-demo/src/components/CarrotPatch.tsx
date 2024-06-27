@@ -14,11 +14,12 @@ const CarrotPatch: React.FC<CarrotPatchProps> = ({ carrots }) => {
     <div className="flex flex-col items-center">
       <div className="grid grid-cols-10 gap-2 p-4 bg-brown-200 rounded-lg">
         {carrots.map((carrot, index) => (
-          <Carrot
-            key={index}
-            carrot={carrot}
-            onClick={() => setSelectedCarrot(carrot)}
-          />
+          <div key={index} className="flex items-end justify-center h-12"> {/* Increased height */}
+            <Carrot
+              carrot={carrot}
+              onClick={() => setSelectedCarrot(carrot)}
+            />
+          </div>
         ))}
       </div>
       {selectedCarrot && (
