@@ -7,13 +7,29 @@ const App: React.FC = () => {
   const carrots: Carrot[] = carrotData;
 
   return (
-    <div className="min-h-screen bg-green-100 flex flex-col items-center justify-center p-4">
-      <h1 className="text-4xl font-bold mb-8 text-green-800">Virtual Carrot Patch</h1>
-      {carrots.length > 0 ? (
-        <CarrotPatch carrots={carrots} />
-      ) : (
-        <p className="text-lg">No carrots found in the patch.</p>
-      )}
+    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-green-200 flex flex-col items-center justify-center p-8">
+      <div className="w-full max-w-6xl bg-white rounded-lg shadow-2xl p-8">
+        <header className="text-center mb-8">
+          <h1 className="text-5xl font-bold text-green-800 mb-2">🥕 Farmer Claude's Carrot Patch 🥕</h1>
+          <p className="text-xl text-green-600">Welcome to our virtual farm!</p>
+        </header>
+
+        <div className="bg-brown-100 p-8 rounded-lg mb-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-16 bg-green-400 transform -skew-y-3"></div>
+          <div className="absolute bottom-0 left-0 w-full h-16 bg-brown-600 transform skew-y-3"></div>
+          <div className="relative z-10">
+            {carrots.length > 0 ? (
+              <CarrotPatch carrots={carrots} />
+            ) : (
+              <p className="text-lg text-center">No carrots found in the patch.</p>
+            )}
+          </div>
+        </div>
+
+        <footer className="text-center text-green-700">
+          <p>© 2024 Farmer Claude's Virtual Farm. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
   );
 };
