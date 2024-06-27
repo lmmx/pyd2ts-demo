@@ -18,7 +18,7 @@ I created a simple React app to show my `Carrot` TypeScript interface in action.
 
 ```sh
 npx create-react-app carrot-demo --template typescript
-cp model.d.ts carrot-demo/interfaces.ts
+cp model.d.ts carrot-demo/interface.d.ts
 ```
 
-(I then wrote a simple app)
+I then generated a carrot patch from the model to be visualised in the web app.

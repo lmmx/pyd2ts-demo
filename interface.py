@@ -2,6 +2,8 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
+__all__ = ["Location", "Conditions", "Carrot"]
+
 
 class Location(BaseModel):
     lat: float
@@ -21,5 +23,8 @@ class Carrot(BaseModel):
     conditions: Conditions
 
 
-schema = Path("schema.json")
-schema.write_text(Carrot.schema_json(indent=2))
+if __name__ == "__main__":
+    # Generate schema
+    schema_path = Path("schema.json")
+    schema_path.write_text(Carrot.schema_json(indent=2))
+    print(f"Generated JSON schema at {schema_path}")

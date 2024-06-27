@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import CarrotPatch from './components/CarrotPatch';
+import { Carrot } from './interface';
 
-function App() {
+const App: React.FC = () => {
+  const [carrots, setCarrots] = useState<Carrot[]>([]);
+
+  useEffect(() => {
+    fetch('/data/carrot_patch.json')
+      .then(response => response.json())
+      .then(data => setCarrots(data));
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-green-100 flex flex-col items-center justify-center">
+      <h1 className="text-4xl font-bold mb-8 text-green-800">Virtual Carrot Patch</h1>
+      {carrots.length > 0 ? (
+        <CarrotPatch carrots={carrots} />
+      ) : (
+        <p>Loading carrots...</p>
+      )}
     </div>
   );
-}
+};
 
 export default App;
