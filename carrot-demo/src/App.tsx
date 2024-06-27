@@ -10,7 +10,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchCarrots = async () => {
       try {
-        const response = await fetch('/data/carrot_patch.json');
+        const response = await fetch(`${process.env.PUBLIC_URL}/data/carrot_patch.json`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
