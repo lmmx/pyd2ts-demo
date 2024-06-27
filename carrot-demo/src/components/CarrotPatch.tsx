@@ -26,7 +26,7 @@ const CarrotPatch: React.FC<CarrotPatchProps> = ({ carrots }) => {
   return (
     <div className="flex flex-col items-center w-full max-w-6xl mx-auto">
       <div className="w-full bg-green-200 p-8 rounded-lg shadow-lg mb-8">
-        <h1 className="text-4xl font-bold text-green-800 mb-4 text-center">Farmer Claude's Carrot Patch</h1>
+        <h1 className="text-4xl font-bold text-green-800 mb-4 text-center">The Carrot Patch</h1>
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center">
             <Sun className="text-yellow-500 mr-2" />
