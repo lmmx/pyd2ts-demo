@@ -1,0 +1,69 @@
+{
+  "$defs": {
+    "Conditions": {
+      "properties": {
+        "temperature_degC": {
+          "title": "Temperature Degc",
+          "type": "integer"
+        },
+        "humidity_pct": {
+          "title": "Humidity Pct",
+          "type": "number"
+        }
+      },
+      "required": [
+        "temperature_degC",
+        "humidity_pct"
+      ],
+      "title": "Conditions",
+      "type": "object"
+    },
+    "Location": {
+      "properties": {
+        "lat": {
+          "title": "Lat",
+          "type": "number"
+        },
+        "long": {
+          "title": "Long",
+          "type": "number"
+        }
+      },
+      "required": [
+        "lat",
+        "long"
+      ],
+      "title": "Location",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "length_cm": {
+      "title": "Length Cm",
+      "type": "integer"
+    },
+    "diameter_cm": {
+      "title": "Diameter Cm",
+      "type": "integer"
+    },
+    "age_months": {
+      "title": "Age Months",
+      "type": "integer"
+    },
+    "location": {
+      "$ref": "#/$defs/Location"
+    },
+    "conditions": {
+      "$ref": "#/$defs/Conditions"
+    }
+  },
+  "required": [
+    "length_cm",
+    "diameter_cm",
+    "age_months",
+    "location",
+    "conditions"
+  ],
+  "title": "Carrot",
+  "type": "object"
+}
