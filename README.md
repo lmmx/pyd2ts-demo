@@ -78,7 +78,8 @@ One simple approach to verify this conformity would be round trip testing:
 2. **Runtime Type Checking**: Implement runtime type checking in TypeScript/JavaScript to validate
    the generated test data against the TypeScript interface.
 
-This might be a bit of an alien concept to Python service developers, but it could be useful to
+This might be a bit of an alien concept to Python service developers: to record examples of input
+data for the purpose of runtime type checks on a consumer interface, but it could be useful to
 generate dummy data (or simply capture and store real data). There might be crossover here with
 Pytest stored values via frameworks like `inline-snapshot` (snapshot testing of course came from Jest).
 
