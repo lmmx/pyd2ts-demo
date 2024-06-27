@@ -28,7 +28,7 @@ def generate_carrot_patch(rows: int, cols: int) -> list[Carrot]:
 
 
 if __name__ == "__main__":
-    patch_size = (5, 20)
+    patch_size = (6, 20)
     h, w = patch_size
     carrot_patch = generate_carrot_patch(*patch_size)
 

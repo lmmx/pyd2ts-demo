@@ -9,7 +9,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-200 to-green-200 flex items-center justify-center p-4">
-      <div className="w-full max-w-8xl bg-white rounded-lg shadow-2xl p-4 flex">
+      <div className="w-full max-w-[1400px] bg-white rounded-lg shadow-2xl p-4 flex">
         <FarmDecoration position="left" />
         <div className="flex-grow">
           <header className="text-center mb-2">
@@ -17,7 +17,7 @@ const App: React.FC = () => {
             <p className="text-lg text-green-600">Growing TypeScript carrots in a 100% Pydantic interface</p>
           </header>
 
-          <div className="bg-brown-100 p-4 rounded-lg mb-2 relative overflow-hidden">
+          <div className="bg-brown-100 p-4 rounded-lg mb-2 relative">
             <div className="absolute top-0 left-0 w-full h-8 bg-green-400 transform -skew-y-3"></div>
             <div className="relative z-10">
               {carrots.length > 0 ? (

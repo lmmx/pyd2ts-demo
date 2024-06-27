@@ -24,9 +24,8 @@ const CarrotPatch: React.FC<CarrotPatchProps> = ({ carrots }) => {
   };
 
   return (
-    <div className="flex flex-col items-center w-full">
-      <div className="w-full bg-green-200 p-2 rounded-lg shadow-lg mb-2">
-        <h2 className="text-2xl font-bold text-green-800 mb-2 text-center">The Carrot Patch</h2>
+    <div className="flex flex-col items-center w-full pb-2">
+      <div className="w-full bg-green-200 p-2 rounded-lg shadow-lg mb-2 pb-2">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Sun className="text-yellow-500 mr-1" size={16} />
@@ -41,15 +40,16 @@ const CarrotPatch: React.FC<CarrotPatchProps> = ({ carrots }) => {
             <span className="text-sm">Harvest Time!</span>
           </div>
         </div>
+        <h2 className="text-2xl font-bold text-green-800 mb-2 text-center">The Carrot Patch</h2>
       </div>
       
-      <div className="relative w-full bg-brown-800 p-2 rounded-lg shadow-lg overflow-hidden">
+      <div className="relative w-full bg-brown-800 p-2 rounded-lg shadow-lg">
         <div className="absolute inset-0 bg-brown-600 opacity-50"></div>
         <div 
-          className="relative grid gap-1"
+          className="relative grid gap-2"
           style={{
             gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
-            gridTemplateRows: `repeat(${rows}, 30px)`,
+            gridTemplateRows: `repeat(${rows}, 40px)`, // Increased from 30px
           }}
         >
           {carrots.map((carrot, index) => (
@@ -59,7 +59,7 @@ const CarrotPatch: React.FC<CarrotPatchProps> = ({ carrots }) => {
                 onClick={() => handleCarrotClick(carrot, index)}
                 isPulled={pulledCarrots.has(index)}
               />
-              <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-brown-800 rounded-t-full"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-brown-800 rounded-t-full"></div>
             </div>
           ))}
         </div>
