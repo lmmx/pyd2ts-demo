@@ -10,8 +10,8 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-b from-blue-200 to-green-200 flex flex-col items-center justify-center p-8">
       <div className="w-full max-w-6xl bg-white rounded-lg shadow-2xl p-8">
         <header className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-green-800 mb-2">🥕 Farmer Claude's Carrot Patch 🥕</h1>
-          <p className="text-xl text-green-600">Welcome to our virtual farm!</p>
+          <h1 className="text-5xl font-bold text-green-800 mb-2">🥕 Old McLouis's Farm 🥕</h1>
+          <p className="text-xl text-green-600">Growing TypeScript carrots in a 100% Pydantic interface</p>
         </header>
 
         <div className="bg-brown-100 p-8 rounded-lg mb-8 relative overflow-hidden">
@@ -27,7 +27,7 @@ const App: React.FC = () => {
         </div>
 
         <footer className="text-center text-green-700">
-          <p>© 2024 Farmer Claude's Virtual Farm. All rights reserved.</p>
+          <p>© Cropright 2024 Old McLouis's Farm. All reaping reserved.</p>
         </footer>
       </div>
     </div>
