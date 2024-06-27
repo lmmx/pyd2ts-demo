@@ -13,7 +13,7 @@ const App: React.FC = () => {
         <FarmDecoration position="left" />
         <div className="flex-grow">
           <header className="text-center mb-2">
-            <h1 className="text-4xl font-bold text-green-800">🥕 Old McLouis's Farm 🥕</h1>
+            <h1 className="text-4xl font-bold text-green-800">🥕 Old McColvin's Farm 🥕</h1>
             <p className="text-lg text-green-600">Growing TypeScript carrots in a 100% Pydantic interface</p>
           </header>
 
@@ -29,7 +29,7 @@ const App: React.FC = () => {
           </div>
 
           <footer className="text-center text-green-700 text-sm">
-            <p>© Cropright 2024 Old McLouis's Farm. All reaping reserved.</p>
+            <p>© Cropright 2024 Old McColvin's Farm. All reaping reserved.</p>
           </footer>
         </div>
         <FarmDecoration position="right" />
