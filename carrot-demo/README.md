@@ -57,6 +57,78 @@ npm run build
 
 This will generate optimized files in the `build` directory, ready for deployment.
 
+## Testing
+
+1. Install necessary dependencies:
+   ```sh
+   npm install zod jest ts-jest @types/jest
+   ```
+
+2. Review the test file (`carrot.test.ts`):
+   ```typescript
+   import { z } from 'zod';
+   import { Carrot } from '../interface'; // Generated TypeScript interface
+   import carrotData from '../data/carrot_patch.json'; // JSON data generated from Pydantic
+   
+   const CarrotSchema = z.object({
+     length_cm: z.number(),
+     diameter_cm: z.number(),
+     age_months: z.number(),
+     location: z.object({
+       lat: z.number(),
+       long: z.number(),
+     }),
+     conditions: z.object({
+       temperature_degC: z.number(),
+       humidity_pct: z.number(),
+     }),
+   });
+   
+   describe('Carrot Interface Validation', () => {
+     it('should validate all carrots in the patch against the TypeScript interface', () => {
+       carrotData.forEach((carrot: Carrot) => {
+         expect(() => CarrotSchema.parse(carrot)).not.toThrow();
+       });
+     });
+   
+     it('should fail validation for an invalid carrot', () => {
+       const invalidCarrot = {
+         length_cm: "not a number", // This should be a number
+         diameter_cm: 2,
+         age_months: 3,
+         location: {
+           lat: 40.7128,
+           long: -74.0060,
+         },
+         conditions: {
+           temperature_degC: 20,
+           humidity_pct: 65,
+         },
+       };
+   
+       expect(() => CarrotSchema.parse(invalidCarrot)).toThrow();
+     });
+   });
+   ```
+
+3. Run the tests:
+   ```sh
+   npx jest
+   ```
+To run the tests (in Jest) run `npm test`
+
+```
+ PASS  src/__tests__/carrot.test.ts
+  Carrot Interface Validation
+    ✓ should validate all carrots in the patch against the TypeScript interface (12 ms)
+    ✓ should fail validation for an invalid carrot (6 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       2 passed, 2 total
+Snapshots:   0 total
+Time:        0.945 s
+```
+
 ## Live Demo
 
 Experience the app in action: [Old McColvin's Farm](https://pyd2ts-demo.vercel.app/)
